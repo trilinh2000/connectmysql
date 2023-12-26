@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create todo</title>
+</head>
+<body>
+    <h2>Create new Todo</h2>
+    <% if(typeof status!=='undefined'){ %>
+        <% if(status=='success'){ %>
+            <div style="color: green;">
+                Create successfully
+            </div>
+        <% }else{ %>
+            <div style="color: red;">
+                Some error occurred while creating the Todo
+            </div>
+        <% } %>
+    <%}%>
+    <form action="/todo" method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+        <br> <br>
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description">
+        <br> <br>
+        <label for="published">Publish</label>
+        <input type="checkbox" name="published" id="published">
+        <br><br>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
